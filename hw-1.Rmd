@@ -1,0 +1,171 @@
+---
+title: "HW-1 CS625 Spring 2023"
+author: "Manasa Vallabhapurapu"
+date: "2023-01-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Git, GitHub
+
+1. *What is your GitHub username?*
+
+ManasaV22
+
+2. *What is the URL of your remote GitHub repo (created through Mr. Kennedy's exercises)?*
+
+https://github.com/ManasaV22/Datavizualization
+
+## R
+
+The command below will load the tidyverse package.  If you have installed R, RStudio, and the tidyverse package, it should display a list of loaded packages and their versions.
+```{r}
+library(tidyverse)
+```
+
+## R Markdown 
+
+1. *Create a bulleted list with at least 3 items*
+Unordered List
+* Item 1
+* Item 2
+    +Item 2a
+    +Item 2b
+ 
+ Ordered List
+ 
+ 1. Item 1
+ 2. Item 2
+ 3. Item 3
+
+
+2. *Write a single paragraph that demonstrates the use of italics, bold, bold italics, code, and includes a link. The paragraph does not have to make sense.*
+*My name Is Manasa Vallabhapurapu*.
+**Preferred name is Manasa**.
+***Pursing Masters in Computer Science***.
+At the command prompt, type `Working as GA in EMSE`.
+My favorite search engine is [Google](https://google.com).
+
+3. *Create a level 3 heading*
+### Welcome to Data Visulaization
+
+## R 
+
+#### Data Visualization Exercises
+
+1. (Q2) *How many rows are in mpg? How many columns?*
+234 *11
+Rows: 234
+Columns:11
+
+1. (Q4) *Make a scatterplot of hwy vs cyl.*
+
+```r
+install.packages("tidyverse")
+library(tidyverse)
+ggplot(mpg, aes(x = cyl, y = hwy)) +
+  geom_point()
+ ```
+
+#### Workflow: basics Exercises
+
+1. (Q2) *Tweak each of the following R commands so that they run correctly (`library(tidyverse)` is correct):*
+
+```r
+library(tidyverse)
+ggplot(dota = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+fliter(mpg, cyl = 8)
+
+filter(diamond, carat > 3)
+```
+
+```r
+library(tidyverse)
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl = 8)
+
+filter(diamonds, carat > 3)
+```
+
+## Google Colab
+
+1. *What are the URLs of your Google Colab notebooks (both Python and R)?*
+
+R- https://colab.research.google.com/drive/1sv5jwLP-Omy7R48Guc8MiI663xeJ4fiO?usp=sharing
+Python- https://colab.research.google.com/drive/1vEjMj3PXfyf2uFjdu_jiw_AEXs3WE8i8?usp=sharing
+
+## Tableau
+
+*Insert your the image of your final bar chart here*
+![ManasaHW_1cs625](https://user-images.githubusercontent.com/108353958/213614982-e46cd09f-5b0d-4900-a9af-0e941abcfe8c.PNG)
+
+1. *What conclusions can you draw from the chart?*
+From the above chart we can depict that the bar graph between the sales and order date having categories and sub categories. Based on the profit we added colors to make the visualization much better. We were able to produce informative insights about the given data
+
+## Observable and Vega-Lite
+
+### A Taste of Observable
+
+1. *In the "New York City weather forecast" section, try replacing `Forecast: detailedForecast` with `Forecast: shortForecast`. Then press the blue play button  or use Shift-Return to run your change. What happens?*
+
+ In the "New York City weather forecast" section, when replaced `Forecast: detailedForecast` after pressing the blue play button  we can see that the details of the Weather Forecast was lengthy and when I changed to shortForecast the details were minimal.
+
+1. *Under the scatterplot of temperature vs. name, try replacing `markCircle()` with `markSquare()`. Then press the blue play button  or use Shift-Return to run your change. What happens? How about `markPoint()`?*
+Initially, when we used markCircle() the scatterplot had dots. When replacing that with markSquare() the dots have changed to squares. When used markPoint() we can observe small circles
+
+1. *Under "Pick a location, see the weather forecast", pick a location on the map.  Where was the point you picked near?*
+ Gustin, TX
+
+1. *The last visualization on this page is a "fancy" weather chart embedded from another notebook.  Click on the 3 dots next to that chart and choose 'Download PNG'.  Insert the PNG into your report.*
+ 
+
+### Charting with Vega-Lite
+
+`markCircle()`
+
+
+### Charting with Vega-Lite
+
+`markCircle()`
+
+1. *Pass an option of `{ size: 200 }` to `markCircle()`.* The size of the circles have increased to 200
+
+1. *Try `markSquare` instead of `markCircle`.* When we changed from markSquare to markCircle, the dots have changed to squares 
+
+1. *Try `markPoint({ shape: 'diamond' })`.*When we changed to markpoint, the plots have changed to small circles
+
+
+`vl.x().fieldQ("Horsepower")`, ...
+
+1. *Change `Horsepower` to `Acceleration`* Changing the horsepower to acceleration the axes has changed
+1. *Swap what fields are displayed on the x- and y-axis* We swap x-axis with Miles_per_Gallon and y-axis with Horsepower.
+
+`vl.tooltip().fieldN("Name")`
+
+1. *Change `Name` to `Origin`.* By changing the Name to Origin the car names got changed to Berkeley, CA.
+![Weather](https://user-images.githubusercontent.com/108353958/214176370-3040661d-b357-431a-be4b-ae034ffc0462.png)
+
+Another example, `count()`
+
+1. *Remove the `vl.y().fieldN("Origin")` line.* When the line was removed, only x axis with count of records would be displayed
+
+1. *Replace `count()` with `average("Miles_per_Gallon")`.* Replacing count() with Average() , The values on X axis has changed
+
+
+## References
+
+*Every report must list the references that you consulted while completing the assignment. If you consulted a webpage, you must include the URL.*
+
+* Insert Reference 1, https://www.example.com
+* Insert Reference 2, https://www.example.com/reallyreallyreally-extra-long-URI/
+* Tableau, [https://www.tutorialspoint.com/tableau/index.htm](https://www.tutorialspoint.com/tableau/index.htm)
+* Vega-Lite, [https://vega.github.io/vega-lite/tutorials/getting_started.html](https://vega.github.io/vega-lite/tutorials/getting_started.html)
+* Markdown, [https://www.markdowntutorial.com/](https://www.markdowntutorial.com/) 
